@@ -4,11 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Last Question</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>{% block title %}{% endblock %} | OLQ</title>
 </head>
 
 <body>
-
+  <nav>
+    <a href="{{ url_for('home.index') }}">Home</a>
+    <a href="{{ url_for('auth.login') }}">Login</a>
+    <a href="{{ url_for('auth.register') }}">Register</a>
+  </nav>
+  {% block body %}{% endblock %}
 </body>
 
 </html>
