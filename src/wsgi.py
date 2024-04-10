@@ -10,7 +10,8 @@ def create_app(test_config=None):
         instance_path=os.path.join(os.getcwd(), "instance"),
     )
     app.config.from_mapping(
-        DB_URL=f"sqlite:///{os.path.join(app.instance_path, 'db.sqlite')}"
+        SECRET_KEY="dev-change-me",
+        DB_URL=f"sqlite:///{os.path.join(app.instance_path, 'db.sqlite')}",
     )
 
     if test_config is None:

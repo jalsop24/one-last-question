@@ -3,5 +3,11 @@
 Home
 {% endblock title %}
 {% block body %}
+
+{% if g.user %}
+<h1>Hello user - {{g.user["email"]}}</h1>
+{% else %}
 <h1>Hello there yo</h1>
+{% endif %}
+
 {% endblock body %}
