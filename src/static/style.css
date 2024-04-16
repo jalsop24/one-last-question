@@ -1,4 +1,45 @@
 
+:root {
+    --background-colour: beige;
+    --foreground-colour: rgb(231, 231, 231);
+}
+
 body {
-    background-color: beige;
+    background-color: var(--background-colour);
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+nav a {
+    color: black;
+    background-color: var(--foreground-colour);
+    padding: 0.6em 1em;
+    border-radius: 0.5em;
+}
+
+nav a:hover {
+    color: white;
+    background-color: gray;
+}
+
+form {
+    background-color: var(--foreground-colour);
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 2px;
+}
+
+.submit-button {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 10px;
+    width: fit-content;
+    align-self: center;
 }
