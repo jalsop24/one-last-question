@@ -22,7 +22,7 @@ bp = Blueprint("auth", __name__)
 def register():
     if request.method == "POST":
         email = request.form["email"]
-        password = request.form["password"]
+        password = request.form["new-password"]
 
         error = None
         if not email:

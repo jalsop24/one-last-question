@@ -10,9 +10,9 @@ Register
 
 <form method="post">
     <label for="email">Email: </label>
-    <input type="email" name="email" id="email" required>
-    <label for="password">Password: </label>
-    <input type="password" name="password" id="password" required>
+    <input id="email" type="email" autocomplete="username" name="email" required>
+    <label for="new-password">New Password: </label>
+    <input id="new-password" type="password" autocomplete="new-password" name="new-password" required>
     <input class="submit-button" type="submit" value="Register">
 </form>
 {% endblock body %}
