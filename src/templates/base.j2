@@ -19,6 +19,7 @@
     <nav>
       <a href="{{ url_for('home.index') }}">Home</a>
       {% if g.user %}
+      <a href="{{ url_for('auth.account') }}">Account</a>
       <a href="{{ url_for('auth.logout') }}">Logout</a>
       {% else %}
       <a href="{{ url_for('auth.login') }}">Login</a>

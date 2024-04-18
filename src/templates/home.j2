@@ -5,7 +5,7 @@ Home
 {% block body %}
 
 {% if g.user %}
-<h1>Hello user - {{g.user["email"]}}</h1>
+<h1>Hello {{g.user.display_name or g.user.email}}</h1>
 {% else %}
 <h1>Hello there yo</h1>
 {% endif %}

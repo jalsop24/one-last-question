@@ -1,0 +1,33 @@
+{% extends "base.j2" %}
+
+{% block title %}
+Account
+{% endblock title %}
+
+{% block body %}
+
+<section style="width: 80%;">
+  <h1>Account</h1>
+  <p>Email: {{g.user.email}}</p>
+  <p>Display Name: {{g.user.display_name or ""}}</p>
+</section>
+
+<section>
+  <h2>Change Account Details</h2>
+  <form class="update-form" method="post" target="_self" autocomplete="off">
+    <label for="display-name">Display Name: </label>
+    <input id="display-name" type="text" name="display-name" value="{{g.user.display_name}}">
+    <input class="submit-button" type="submit" value="Update">
+  </form>
+  <form class="update-form" method="post" target="_self" autocomplete="off">
+    <label for="change-email">Change email: </label>
+    <input id="change-email" type="email" name="change-email" autocomplete="off" value="{{g.user.email}}">
+    <input class="submit-button" type="submit" value="Update">
+  </form>
+  <form class="update-form" method="post" target="_self" autocomplete="off">
+    <label for="change-password">Change Password: </label>
+    <input id="change-password" type="password" name="change-password" autocomplete="off" value="">
+    <input class="submit-button" type="submit" value="Update">
+  </form>
+</section>
+{% endblock body %}

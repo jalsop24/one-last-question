@@ -106,3 +106,28 @@ def login_required(view):
         return view(**kwargs)
 
     return wrapped_view
+
+
+@login_required
+@bp.route("/account", methods=["GET", "POST"])
+def account():
+    if request.method == "POST":
+        form = request.form
+        print(form)
+
+        db = get_db()
+        match form:
+            case {"display-name": display_name}:
+                print(f"{display_name = }")
+                g.user.display_name = display_name
+                db.commit()
+            case {"change-email": new_email}:
+                print(f"{new_email = }")
+            case {"change-password": new_password}:
+                print("change password")
+                g.user.password_hash = generate_password_hash(new_password)
+                db.commit()
+            case _:
+                print("Unknown form")
+
+    return render_template("account.j2")

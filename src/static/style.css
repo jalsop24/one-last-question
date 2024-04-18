@@ -52,6 +52,14 @@ form {
     align-self: center;
 }
 
+form h2 {
+    margin: 0;
+}
+
+section {
+    align-self: center;
+}
+
 .submit-button {
     padding: 10px;
     margin: 5px;
@@ -89,4 +97,16 @@ form {
 .newsletter section {
     background-color: white;
     padding: 0.2em;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    margin: 0.5em;
+    gap: 1em;
+}
+
+.update-form .submit-button{
+    padding: 0.3em;
 }
