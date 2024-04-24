@@ -20,10 +20,11 @@ def create_app(test_config=None):
         app.config.from_mapping(test_config)
 
     # Register views / blueprints
-    from . import auth, home
+    from . import auth, home, newsletters
 
     app.register_blueprint(home.bp)
     app.register_blueprint(auth.bp)
+    app.register_blueprint(newsletters.bp)
 
     # Make sure instance folder exists
     try:
