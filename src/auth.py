@@ -1,3 +1,5 @@
+from functools import wraps
+
 from flask import (
     Blueprint,
     render_template,
@@ -100,6 +102,9 @@ def load_logged_in_user():
 
 def login_required(view):
 
+    # Important to include @wraps so that flask
+    # routing works properly
+    @wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
             return redirect(url_for("auth.login"))
