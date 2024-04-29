@@ -16,7 +16,7 @@ Account
   <h2>Change Account Details</h2>
   <form class="update-form" method="post" target="_self" autocomplete="off">
     <label for="display-name">Display Name: </label>
-    <input id="display-name" type="text" name="display-name" value="{{g.user.display_name}}">
+    <input id="display-name" type="text" name="display-name" value="{{g.user.display_name or ''}}">
     <input class="submit-button" type="submit" value="Update">
   </form>
   <form class="update-form" method="post" target="_self" autocomplete="off">

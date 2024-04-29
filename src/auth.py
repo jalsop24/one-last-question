@@ -25,10 +25,15 @@ def register():
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["new-password"]
+        display_name = request.form["display-name"]
+
+        print(request.form)
 
         error = None
         if not email:
             error = "Email is required"
+        elif not display_name:
+            error = "Name is required"
         elif not password:
             error = "Password is required"
 
@@ -39,6 +44,7 @@ def register():
                 db.add(
                     User(
                         email=email,
+                        display_name=display_name,
                         password_hash=generate_password_hash(password),
                     )
                 )
