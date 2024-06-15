@@ -35,7 +35,7 @@ class User(Base):
 class Newsletter(Base):
     __tablename__ = "newsletters"
     id: Mapped[int] = mapped_column(primary_key=True)
-    content: Mapped[str]
+    name: Mapped[str]
     users: Mapped[list[User]] = relationship(
         secondary=user_newsletter_table, back_populates="newsletters"
     )
