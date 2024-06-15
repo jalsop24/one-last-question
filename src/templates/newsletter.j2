@@ -8,8 +8,9 @@ Newsletters
 
 <a href="create">Create a new newsletter</a>
 
+{% for newsletter in newsletters %}
 <div class="newsletter">
-  <h2>Newsletter Title</h2>
+  <h2>{{newsletter.name}}</h2>
   <section>
     <h3>Question 1</h3>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, nesciunt impedit culpa natus laudantium
@@ -27,5 +28,7 @@ Newsletters
     <p>Hi :)</p>
   </section>
 </div>
+{% endfor %}
+
 
 {% endblock body %}
