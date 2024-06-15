@@ -11,6 +11,7 @@ python = "^3.10"
 Flask = "^3.0.3"
 SQLAlchemy = "^2.0.29"
 alembic = "^1.13.1"
+flask-mail = "^0.10.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"
