@@ -1,0 +1,7 @@
+services:
+  web:
+    container_name: one-last-question
+    build: .
+    command: gunicorn "app.wsgi:create_app()" -b 0.0.0.0:8000
+    ports:
+      - 8080:8000
