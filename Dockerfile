@@ -12,8 +12,6 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY ./instance/live_config.json ./instance/config.json
-
 COPY ./src ./app
 
 EXPOSE 8000
